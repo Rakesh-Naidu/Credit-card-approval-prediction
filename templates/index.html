@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>💳 Credit Card Approval Prediction 💳</title>
+	<link rel="stylesheet" href="static/css/cssfile.css">
+</head>
+<body>
+	<div class="login">
+		<center><h1>💳 Credit Card Approval Prediction 💳</h1></center>
+		<center>
+			<h2>
+				Welcome to my website.
+				<br>
+				<br>
+				Enter the following data to predict the approval status of credit card.
+			</h2>
+		</center>
+		<br><br>
+		<form action="{{url_for('predict')}}" method="post" class="form-container">
+			<div class="div">
+				<label>
+					Prior Default 🤔 &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+					<!-- <input type="number" min=0 step=0.01 name="Medinc" required="required"> -->
+			</label>
+			<label>
+				<select name="prior" id="prior">
+					<option value="1">YES</option>
+					<option value="0">NO</option>
+				</select>
+			</label>
+			</div>
+			<br>
+			<br>
+
+			<div class="div">
+				<label>
+					Years Employed 👷‍♂️👷‍♀️
+				</label>
+				<label>
+					<input type="number" min=0 max=40 name="exp" required="required">
+				</label>
+			</div>
+			<br>
+			<br>
+
+			<div class="div">
+				<label>
+					Credit Score 📊 
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				</label>
+				<label>
+					<input type="number" min=0 max=12 name="score" required="required">
+				</label>
+			</div>
+			<br>
+			<br>
+
+			<div class="div">
+				<label>
+					Income 💵 
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				</label>
+				<label>
+				<input type="number" min=0 max=2000 step=0.01 name="income" required="required">
+				</label>
+			</div>
+			<br>
+			<br>
+			<div class="div">
+			<button type="submit" class="btn btn-primary btn-block btn-large">
+			PREDICT
+			</button>
+			</div>
+			<br>
+			<br>
+		<div class="q">
+   			<strong style="font-size:35px">{{ prediction_text }}</strong>
+   			<!-- The price of the house is : $100000 -->
+   		</div>
+		</form>
+		<br>
+   		<br>
+	</div>
+</body>
+</html>
